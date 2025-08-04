@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>TypoScaler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>TypoScaler</h1>
+      <div class="controls">
+        <label>
+          <span>Font family</span>
+          <select id="font-family"></select>
+        </label>
+        <label>
+          <span>Base font size</span>
+          <input
+            type="number"
+            value="16"
+            min="0"
+            max="32"
+            step="0.1"
+            id="base-font-size"
+          />
+        </label>
+        <label>
+          <span>Ratio</span>
+          <select id="ratio">
+            <option value="1.618033989" selected>Golden Ratio</option>
+            <option value="1.414213562">Square Root of 2</option>
+            <option value="1.333333333">Perfect Fourths</option>
+            <option value="1.25">Perfect Fifths</option>
+            <option value="1.2">Major Thirds</option>
+            <option value="1.125">Minor Thirds</option>
+            <option value="1.15">Custom Ratio</option>
+          </select>
+        </label>
+        <label>
+          <span>Value</span>
+          <input
+            type="number"
+            value="1.62"
+            min="1"
+            max="2"
+            step="0.01"
+            id="ratio-value"
+            disabled
+          />
+        </label>
+        <label>
+          <input type="checkbox" id="dark-mode-toggle" />
+          <span>Dark theme</span>
+        </label>
+      </div>
+    </header>
+    <article>
+      <h1>Typography is not a joke</h1>
+      <h2>Type Anatomy: The Inner Geek</h2>
+      <h3>Ascenders, Descenders, and x-Height—Oh My!</h3>
+      <p>
+        Imagine each lowercase letter on a trampoline: the x-height is how high
+        it bounces above the baseline, while ascenders and descenders are those
+        ambitious or shy strokes that leap up or dive below. Too much bounce and
+        your lines collide; too little and your text looks sleepy. Balance, dear
+        reader, is everything—especially if you don’t want your “p” tickling the
+        line below.
+      </p>
+      <p>
+        These dimensions lurk in a font’s “hhea” and “OS/2” tables like
+        clandestine recipes. No punch-cutting required, but if you ever file a
+        freedom-of-information request on your favorite typeface, you’ll find
+        all the secret metrics hidden in those tables—like a treasure map drawn
+        in Bézier curves.
+      </p>
+      <h3>Serifs, Terminals, and Stroke Contrast</h3>
+      <p>
+        Serifs come in bracketed, slab, hairline, and maybe even cheese-flavored
+        varieties if you ask certain type designers. They’re the little flairs
+        at stroke ends that can usher the eye along or trip it over a decorative
+        flourish. Terminals—for those glyphs sans serifs—offer ballterminals or
+        blunt fins, like adorable hats or tiny axe heads at every stroke’s end.
+      </p>
+      <p>
+        High-contrast typefaces are the drama queens of the font world,
+        flaunting thin hairlines next to chunky stems. Low contrast faces are
+        the stoic monks, whispering uniform thickness. Both have their
+        place—just don’t send a hairline face to a ransom note at 6pt or it
+        might vanish entirely.
+      </p>
+      <h2>Advanced Font Mechanics</h2>
+      <h3>Optical Kerning vs. Metric Kerning</h3>
+      <p>
+        Built-in kerning pairs live in the “GPOS” table, plotting predefined
+        spacing corrections for troublemaking letter duos like “AV” or “To.” But
+        optical kerning is the font’s version of improv comedy: an algorithm
+        eyeballs each shape and tweaks spacing on the fly to avoid awkward
+        silences (or white-space gaps) between glyphs.
+      </p>
+      <p>
+        Sure, metric kerning is reliable—like a Swiss watch. But optical kerning
+        is like that unpredictable buddy who always lands the perfect punchline.
+        Pro tip: use both. Let the font’s metrics handle the usual suspects,
+        then unleash optical kerning when things get weird.
+      </p>
+      <h3>Ligatures, Diacritics, and Glyph Swaps</h3>
+      <p>
+        Your typeface is more than A–Z. It’s a global United Nations of accented
+        characters, discretionary ligatures (“ﬁ”, “ﬂ”), old-style figures, and
+        even secret stylistic alternates. Think of ligatures as tiny romantic
+        couplings—“st” holding hands—while diacritics are cultural ambassadors
+        from dozens of languages.
+      </p>
+      <p>
+        OpenType features like “liga” and “dlig” unlock these treasures, if your
+        typesetting tool isn’t staging a coup. Discretionary ligatures can make
+        text flow like poetry, but if you overdo it, your prose might start to
+        look like ancient runes—or worse, Comic Sans wannabes.
+      </p>
+      <h2>Typographic Humor in the Wild</h2>
+      <h3>Font Nightmares and Design Therapy</h3>
+      <p>
+        Ever opened a PDF only to find the dreaded “Font Error: Document uses
+        undefined font” message? It’s the typographer’s version of stepping on a
+        LEGO: instant, searing pain. Fear not—embedding your type or outlining
+        paths can save fellow readers from anguish, though it may ruin your
+        ability to edit later. Sacrifices must be made.
+      </p>
+      <p>
+        When in doubt, consult your local font police. They’ll tell you Comic
+        Sans belongs in a 1995 ransom note, not your brand identity. But be
+        kind—everyone’s a beginner until they accidentally kern “W H” into an
+        explosive void.
+      </p>
+      <h3>Type Specimens and Obsessive Collecting</h3>
+      <p>
+        Browsing a type specimen book feels like Pokémon for font geeks: “Gotta
+        catch ’em all!” Each family offers Roman, Italic, Bold, Black,
+        Extrabold, and sometimes “Ultra-Super-Mega-Bold” variants. The thrill of
+        unlocking a variable font axis is akin to discovering a new planet—your
+        kerning settings will never be the same.
+      </p>
+      <p>
+        But remember: hoarding hundreds of font files can slow your system to a
+        crawl, turning your computer into a reluctant dinosaur. Moderation is
+        key—unless you enjoy watching those progress bars inch forward like
+        contemplative snails.
+      </p>
+      <p>
+        <small
+          >Note: Any font-related injuries in the making of this article are
+          purely fictional. No actual kerning pairs were harmed, though several
+          ligatures were misused for comedic effect.</small
+        >
+      </p>
+    </article>
+    <footer>
+      <p>
+        Made with ❤️ by
+        <a href="https://github.com/bence-toth" target="_blank" rel="noopener"
+          >Bence A. Tóth</a
+        >
+        |
+        <a
+          href="https://github.com/bence-toth/typoscaler"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

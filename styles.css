@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  --multiplier: 1.618033989;
+}
+
+body {
+  --foreground-color: hsl(0deg 0% 10%);
+  --background-color: hsl(0deg 0% 95%);
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body.dark {
+  --foreground-color: hsl(0deg 0% 85%);
+  --background-color: hsl(0deg 0% 5%);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  width: 100%;
+  z-index: 2;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--foreground-color);
+  font-size: 14px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+label:has(input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+input[type="number"],
+select {
+  font-family: inherit;
+  font-size: 1em;
+  padding: 4px;
+  margin-top: 4px;
+}
+
+.controls {
+  user-select: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+footer {
+  background-color: var(--background-color);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid var(--foreground-color);
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--foreground-color);
+}
+
+article {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 24px;
+}
+
+article p {
+  font-size: 1rem;
+  margin-bottom: 1em;
+  line-height: calc(1 + var(--multiplier) / 2);
+}
+
+article h1 {
+  font-size: calc(
+    1rem * var(--multiplier) * var(--multiplier) * var(--multiplier)
+  );
+  margin-bottom: 0.5em;
+
+  font-weight: normal;
+  text-wrap: balance;
+}
+
+article h2 {
+  font-size: calc(1rem * var(--multiplier) * var(--multiplier));
+  margin-bottom: 0.5em;
+  margin-top: 1.25em;
+  font-weight: normal;
+  text-wrap: balance;
+}
+
+article h3 {
+  font-size: calc(1rem * var(--multiplier));
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  font-weight: normal;
+  text-wrap: balance;
+}
+
+article p:has(> small) {
+  font-size: calc(1rem / var(--multiplier));
+  margin-bottom: 1em;
+  line-height: calc(1 + var(--multiplier) / 2);
+}
+
+small {
+  font-size: 1em;
+}
