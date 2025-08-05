@@ -3,6 +3,10 @@ const baseFontSizeInputElement = document.getElementById("base-font-size");
 const darkModeToggleElement = document.getElementById("dark-mode-toggle");
 const fontFamilySelectElement = document.getElementById("font-family");
 const ratioValueInputElement = document.getElementById("ratio-value");
+const pixelValuesToggleButtonElement = document.getElementById(
+  "pixel-values-toggle"
+);
+const pixelValuesElement = document.querySelector(".pixel-values");
 
 // Recalculate and render pixel values
 const recalculateAndRenderPixelValues = ({ baseFontSize, ratio }) => {
@@ -162,11 +166,15 @@ fontFamilySelectElement.addEventListener("change", (event) => {
 });
 
 // On dark mode toggle change, add or remove the dark class from the body
-darkModeToggleElement.addEventListener("change", (event) => {
-  const isDarkMode = event.target.checked;
-  if (isDarkMode) {
-    document.body.classList.add("dark");
-  } else {
-    document.body.classList.remove("dark");
-  }
+darkModeToggleElement.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+});
+
+// On pixel values toggle button click, toggle the visibility of pixel values
+pixelValuesToggleButtonElement.addEventListener("click", () => {
+  pixelValuesElement.classList.toggle("hidden");
+  pixelValuesToggleButtonElement.innerText =
+    pixelValuesElement.classList.contains("hidden")
+      ? "Give me pixels"
+      : "Hide pixels";
 });

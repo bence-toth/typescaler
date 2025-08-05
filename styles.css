@@ -20,7 +20,7 @@ body {
 }
 
 body.dark {
-  --foreground-color: hsl(0deg 0% 85%);
+  --foreground-color: hsl(0deg 0% 90%);
   --background-color: hsl(0deg 0% 5%);
 }
 
@@ -36,6 +36,13 @@ header {
   justify-content: space-between;
   border-bottom: 2px solid var(--foreground-color);
   font-size: 14px;
+}
+
+@media (width <= 960px) {
+  header {
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
 label {
@@ -62,6 +69,31 @@ select {
   display: flex;
   gap: 24px;
   align-items: center;
+}
+
+#pixel-values-toggle {
+  display: none;
+}
+
+@media (width <= 960px) {
+  #pixel-values-toggle {
+    display: block;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    padding: 10px;
+    font-family: inherit;
+    background-color: var(--foreground-color);
+    color: var(--background-color);
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .pixel-values.hidden {
+    display: none;
+  }
 }
 
 footer {
@@ -102,7 +134,7 @@ footer a {
   gap: 8px 12px;
 }
 
-.pixel-values dl:not(:last-child) {
+.pixel-values > div:not(:last-child) dl {
   margin-bottom: 24px;
 }
 
@@ -110,10 +142,34 @@ footer a {
   text-align: right;
 }
 
+@media (width <= 960px) {
+  .pixel-values {
+    left: 0;
+    position: fixed;
+    transform: none;
+    background-color: var(--background-color);
+    border-left: 0;
+  }
+}
+
 article {
   max-width: 800px;
   margin: 60px auto;
   padding: 24px;
+}
+
+@media (width <= 1320px) {
+  article {
+    margin: 60px 0 60px 260px;
+    padding-right: 30px;
+  }
+}
+
+@media (width <= 960px) {
+  article {
+    margin: 30px auto;
+    padding-inline: 30px;
+  }
 }
 
 article p {
