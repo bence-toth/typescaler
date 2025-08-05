@@ -78,6 +78,38 @@ footer a {
   color: var(--foreground-color);
 }
 
+.pixel-values {
+  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  transform: translateX(-100%)
+    translateX(
+      calc(-0.5rem * var(--multiplier) * var(--multiplier) * var(--multiplier))
+    );
+  position: absolute;
+  font-size: 14px;
+  border: 2px solid var(--foreground-color);
+  padding: 16px;
+  width: 220px;
+}
+
+.pixel-values .element {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.pixel-values dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 12px;
+}
+
+.pixel-values dl:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.pixel-values dd {
+  text-align: right;
+}
+
 article {
   max-width: 800px;
   margin: 60px auto;
@@ -95,7 +127,6 @@ article h1 {
     1rem * var(--multiplier) * var(--multiplier) * var(--multiplier)
   );
   margin-bottom: 0.5em;
-
   font-weight: normal;
   text-wrap: balance;
 }
